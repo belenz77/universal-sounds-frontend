@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import './ViniloDetalle.css';
-import Portada from "../../data/images/18.png";
+import Portada from "../../data/img/04.jpg";
 
 function ViniloDetalle() {
     return (

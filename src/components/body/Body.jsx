@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ButtonAdd from './ButtonAdd';
-import Json from '../../data/Json';
-import Foto from './img/10.png'
+// import ButtonAdd from './ButtonAdd';
+import Json from '../../data/Json.jsx';
 import './Body.css';
 
 function Body() {
@@ -12,13 +10,15 @@ function Body() {
     <div className="ContainerCards">
       <div className="Cards">
         {cards.map(product => (
-          <div key={product.id}>
+          <div className= "Box" key={product.id}>
             <img src={product.image} alt="" />
             <h3>{product.bandName}</h3>
             <h3>{product.albumName}</h3>
             <p>{product.price}</p>
-            <ButtonAdd />
+            {/* <ButtonAdd /> */}
           </div>
+        
+
         ))}
       </div>
 
