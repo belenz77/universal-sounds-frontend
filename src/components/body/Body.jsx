@@ -1,41 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import ButtonAdd from './ButtonAdd';
+import Json from '../../data/Json';
+import Foto from './img/10.png'
+import './Body.css';
 
-// import { Link } from 'react-router-dom';
+function Body() {
 
-const url = 'http://localhost:8000/api'
+  const cards = Json
 
-const Body = () => {
+  return (
+    <div className="ContainerCards">
+      <div className="Cards">
+        {cards.map(product => (
+          <div key={product.id}>
+            <img src={product.image} alt="" />
+            <h3>{product.bandName}</h3>
+            <h3>{product.albumName}</h3>
+            <p>{product.price}</p>
+            <ButtonAdd />
+          </div>
+        ))}
+      </div>
 
-    const [vinils, setVinils] = useState([]);
+    </div>
 
-    useEffect(() => {
-        getAllElements();
-    }, [])
-
-    const getAllElements = async () => {
-        const response = await axios.get(`${url}/vinils`);
-        setVinils(response.data);
-    }
-
-    return (
-        <div>
-            <div>
-                <h2> Listado de vinilos </h2>
-                {
-                    vinils.map((vinil) => (
-                        <div className="max-w-sm rounded overflow-hidden shadow-lg" key={vinil.id}>
-                            <img className="w-full" src={vinil.image} alt="Sunset in the mountains" />
-                            <div className="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">{vinil.bandName}</div>
-                                <p class="text-gray-700 text-base"> {vinil.albumName}</p>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
-    );
+  );
 }
 
 export default Body;
