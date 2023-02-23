@@ -1,12 +1,14 @@
 // import ButtonAdd from './ButtonAdd';
 import Json from '../../data/Json.jsx';
 import './Body.css';
+// import ButtonAdd from './ButtonAdd.jsx';
 
 function Body() {
 
   const cards = Json
 
   return (
+    <div className="containerbody">
     <div className="ContainerCards">
       <div className="Cards">
         {cards.map(product => (
@@ -22,6 +24,7 @@ function Body() {
         ))}
       </div>
 
+    </div>
     </div>
 
   );

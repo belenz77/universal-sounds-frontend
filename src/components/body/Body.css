@@ -1,6 +1,16 @@
-.ContainerCards{
+.containerbody {
+  padding-left: 25vw;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+.ContainerCards {
+  /* margin-left: 25vw; */
   border-color: black;
-  border:2px
+  border:2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .Box {
   width: 30%;

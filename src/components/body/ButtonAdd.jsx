@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Body.css';
 
 function ButtonAdd() {
     const [products, setProducts] = useState([]);
@@ -23,7 +24,7 @@ function ButtonAdd() {
           value={newProduct}
           onChange={event => setNewProduct(event.target.value)}
         />
-        <button  className= "ButtonAdd" onClick={addProduct}>Añadir</button>
+        <button  className="Add" onClick={addProduct}>Añadir</button>
       </div>
     );
   }
